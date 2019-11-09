@@ -1,0 +1,20 @@
+<style>
+p{
+    color:blue;
+    font-weight: bold;
+}
+
+</style>
+<p>style-class works!</p>
+
+<p [style.color]="couleur" [style.font-size.px]="taille" >style-class works!</p>
+
+<p [ngStyle]="{color:getColor(),'font-size.px':taille}">style-class works!</p>
+
+<p [ngStyle]="{'font-style':style,'background-color':couleur,'font-size.px':24}">style-class works!</p>
+
+<p [ngClass]="class">style-class works!</p>
+
+<p [ngClass]="'c2'" >style-class works!</p>
+
+<p [ngClass]="(admin==!true)?'c2':class">style-class works!</p>

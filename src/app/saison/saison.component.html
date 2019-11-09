@@ -1,0 +1,35 @@
+<h1>Correspendant Mois/Saison</h1>
+<br>
+<span>Donnez un numéro de mois : 
+
+    <select [(ngModel)]="nombre">
+        <option value={{x}} *ngFor="let x of mois;let indice=index">{{x}}</option>
+    </select>
+</span>
+<p> le mois <span> {{nombre}}</span> est 
+   
+    <span [ngSwitch]="true">
+            <span *ngSwitchCase="((nombre>=1) && (nombre<4))"> {{a}} </span>
+            <span *ngSwitchCase="((nombre>=4) && (nombre<7))"> {{b}} </span>
+            <span *ngSwitchCase="((nombre>=7) && (nombre<10))"> {{c}} </span>
+            <span *ngSwitchCase="((nombre>=10) && (nombre<13))"> {{d}} </span>
+        </span>
+   <!-- <span [ngSwitch]="nombre">
+       <span  *ngSwitchCase="1">   {{a}} </span>
+       <span  *ngSwitchCase="2">   {{a}} </span>
+       <span  *ngSwitchCase="3">   {{a}} </span>
+
+       <span  *ngSwitchCase="4">   {{b}} </span>
+       <span  *ngSwitchCase="5">   {{b}} </span>
+       <span  *ngSwitchCase="6">   {{b}} </span>
+
+       <span  *ngSwitchCase="7">   {{c}} </span>
+       <span  *ngSwitchCase="8">   {{c}} </span>
+       <span  *ngSwitchCase="9">   {{c}} </span>
+
+       <span  *ngSwitchCase="10"> {{d}} </span> 
+       <span  *ngSwitchCase="11"> {{d}} </span> 
+       <span  *ngSwitchCase="12"> {{d}} </span> 
+       <span  *ngSwitchDefault> ..... </span>
+ .   </span> 
+   --></p>

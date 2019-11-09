@@ -1,0 +1,23 @@
+<h1> Affichage des étudiants </h1>
+
+    <ul *ngFor=" let etudians of etudiants ; let i=index ">
+      <ul> 
+          <li> Etudiant num °{{i+1}}  </li>
+        <ul>
+            <li>{{etudiants[i].prenom }} {{etudiants[i].nom | uppercase}}</li>
+            <li>{{etudiants[i].date|date:'longDate'}} </li>
+            <li [ngClass]="etudiants[i].moyenne>16?'c1':'c2'" >
+                {{etudiants[i].moyenne}}
+             <span [ngSwitch]="true">
+                 <span *ngSwitchCase="((etudiants[i].moyenne<12) &&(etudiants[i].moyenne>10))">: Mention Passable </span>
+                 <span *ngSwitchCase="((etudiants[i].moyenne<14) &&(etudiants[i].moyenne>12))">: Mention assez bien </span>
+                 <span *ngSwitchCase="((etudiants[i].moyenne<16) &&(etudiants[i].moyenne>14))">: Mention  bien </span>
+                 <span *ngSwitchCase="(etudiants[i].moyenne>16)">: Mention Trés bien </span>
+             </span>
+            </li>
+            <li *ngIf="etudiants[i].ville!='Tunis'">{{etudiants[i].ville}}</li>
+         </ul>
+       </ul>
+    </ul>
+
+      
